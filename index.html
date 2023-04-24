@@ -181,6 +181,33 @@
       width: auto;
       margin-right: 10px;
     }
+
+/**/
+#imagens-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 150px; /* ajuste o valor conforme necessário */
+}
+
+.imagem {
+  text-align: center;
+  width: 48%;
+  margin-bottom: 20px;
+  margin-right: 2%;
+  margin-left: 2%;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #fff;
+}
+
+.imagem img {
+  display: block;
+  margin: 0 auto;
+  width: 100%; /* ajuste para a imagem ocupar 100% da largura do contêiner */
+  height: auto; /* para manter a proporção da imagem */
+}
+/**/
   </style>
 </head>
 <header>
@@ -199,10 +226,24 @@
         <li><a href="https://bdm.tools/">BDM Tools</a></li>
         <li><a href="https://chat.whatsapp.com/KWYDZZ5ndQE9BRuJFEe9hD">Contato WhatsApp</a></li>
         <li><a href="https:discord.io/God_Ragnarok">Contato Discord</a></li>
-        
         </nav>
       </div>>
     </div>
+
+    <!-- Container para as imagens -->
+    <div id="imagens-container">
+      <!-- Primeira imagem -->
+      <div class="imagem">
+        <h3>Requisitos para participar da Guilda:</h3>
+        <img src="https://cdn.discordapp.com/attachments/1010289282461728789/1096154916717858946/IMG-20230325-WA0027.jpg" alt="Título da imagem 1" width="400">
+      </div>
+      <!-- Segunda imagem -->
+      <div class="imagem">
+        <h3>Requisitos para participar da Guilda:</h3>
+        <img src="https://cdn.discordapp.com/attachments/1010289282461728789/1096154916935970896/IMG-20230325-WA0028.jpg" alt="Título da imagem 2" width="400">        
+      </div>
+    </div>
+
     <div id="conteudo">
       <p>Ranking</p>
       <div id="iframe-container">
