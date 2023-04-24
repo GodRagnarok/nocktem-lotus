@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css" />
+    <style type="text/css">
+        .carousel {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+        }
+
+        .video {
+            display: inline-block;
+            margin: 0 auto;
+        }
+
+        .video-title {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .controls button {
+            margin: 0 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="carousel">
+        <div class="video">
+            <h2 class="video-title">Black Desert Mobile - Showcase Classe Grappler Striker/Duelista.</h2>
+            <iframe width="942" height="530" src="https://www.youtube.com/embed/ornkF9TcKvg" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+        <div class="video">
+            <h2 class="video-title">PSY - GANGNAM STYLE(강남스타일) M/V</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9bZkp7q19f0" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="controls">
+        <button class="slick-prev">Anterior</button>
+        <button class="slick-next">Próximo</button>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.carousel').slick({
+                dots: false,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                duplicate: false
+            });
+            $('.controls button').on('click', function () {
+                var direction = $(this).hasClass('slick-next') ? 'next' : 'prev';
+                $('.carousel').slick(direction);
+            });
+        });
+    </script>
+</body>
+
+</html>
