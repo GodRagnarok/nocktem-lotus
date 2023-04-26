@@ -215,6 +215,44 @@
     }
 
     /**/
+
+    /*Botão Volta ao topo*/
+    #myBtn {
+      display: none;
+      /* Esconder o botão inicialmente */
+      position: fixed;
+      /* Fixar o botão na posição desejada */
+      bottom: 20px;
+      /* Distância em pixels do botão em relação ao fundo da página */
+      right: 30px;
+      /* Distância em pixels do botão em relação à borda direita da página */
+      z-index: 99;
+      /* Colocar o botão na frente de outros elementos na página */
+      border: none;
+      /* Remover a borda do botão */
+      outline: none;
+      /* Remover a borda de seleção do botão */
+      background-color: #9462e4;
+      /* Definir a cor de fundo do botão */
+      color: rgb(255, 255, 255);
+      /* Definir a cor do texto do botão */
+      cursor: pointer;
+      /* Definir o cursor como um ponteiro ao passar o mouse sobre o botão */
+      padding: 15px;
+      /* Definir o espaçamento interno do botão */
+      border-radius: 10px;
+      /* Definir a borda arredondada do botão */
+      font-family: Star Wars, fantasy;
+      font-size: 16px;
+      /* Definir o tamanho da fonte do texto do botão */
+    }
+
+    #myBtn:hover {
+      background-color: black;
+      /* Definir a cor de fundo do botão quando o mouse passa sobre ele */
+    }
+
+    /*final*/
   </style>
 </head>
 <header>
@@ -264,6 +302,25 @@
           width="1190" height="1750"></iframe>
       </div>
 
+      <script>
+        // Quando o usuário rolar a página para baixo de 20 pixels, mostrar o botão
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("myBtn").style.display = "block";
+          } else {
+            document.getElementById("myBtn").style.display = "none";
+          }
+        }
+        // Quando o usuário clicar no botão, fazer a animação de scroll suave
+        function topFunction() {
+          document.body.scrollTop = 0; // Para Safari
+          document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE e Opera
+        }
+      </script>
+
+      <button onclick="topFunction()" id="myBtn" title="Voltar ao topo">Voltar ao topo</button>
       <footer>
         <p>GodRagnarok™️ - Todos os direitos reservados.</p>
       </footer>
