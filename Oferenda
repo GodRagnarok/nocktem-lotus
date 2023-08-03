@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Valhalla</title>
+  <link rel="icon" href="https://cdn.discordapp.com/attachments/1046111249785684032/1097966553007398912/logo.png">
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #header {
+      background-color: #333;
+      color: #fff;
+      height: 80px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    #menu {
+      background-color: #ccc;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      position: fixed;
+      top: 80px;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+    }
+
+    #menu a {
+      color: #333;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    #conteudo {
+      margin-top: 120px;
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 0;
+      padding: 20px;
+      font-size: 36px;
+      text-align: center;
+    }
+
+    /* alteração da cor do nome "Bem-vindo a Valhalla" */
+    #header h1 {
+      color: rgb(0, 0, 0);
+    }
+
+    /*alinhamento da planilha*/
+    #iframe-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    iframe {
+      margin: 0 auto;
+    }
+
+    /*final alinhamento da planilha  */
+    /*fonte do nome Ranking*/
+    #conteudo p {
+      font-family: Star Wars, Fantasy;
+      font-size: 28px;
+      color: #ffffff;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    /*final fonte ranking*/
+    /*personalizar rodape*/
+    footer {
+      position: flex;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 14px;
+      padding: 10px;
+    }
+
+    /*final rodape*/
+
+    /*setas*/
+    .page-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .page-nav a {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      font-size: 35px;
+      line-height: 30px;
+      margin: 0 200px;
+      color: #aa8de8;
+    }
+
+    .page-nav a:hover {
+      color: rgb(27, 187, 187);
+    }
+
+    /*final*/
+    /*plano de fundo do site*/
+    body {
+      background-image: url('https://cdn.discordapp.com/attachments/1046111249785684032/1097605303803056138/plano.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    /*final*/
+    /*plano de fundo menu*/
+    #menu {
+      background-image: url(https://cdn.discordapp.com/attachments/1010289282461728789/1097587584261173278/Wallpaper.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    /*final*/
+    /*plano de fundo titulo*/
+    #header {
+      background-image: url('https://cdn.discordapp.com/attachments/1010289282461728789/1097587584261173278/Wallpaper.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-color: #333;
+      color: #fff;
+      height: 80px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    /*final*/
+    /*Botão Volta ao topo*/
+    #myBtn {
+      display: none;
+      /* Esconder o botão inicialmente */
+      position: fixed;
+      /* Fixar o botão na posição desejada */
+      bottom: 20px;
+      /* Distância em pixels do botão em relação ao fundo da página */
+      right: 30px;
+      /* Distância em pixels do botão em relação à borda direita da página */
+      z-index: 99;
+      /* Colocar o botão na frente de outros elementos na página */
+      border: none;
+      /* Remover a borda do botão */
+      outline: none;
+      /* Remover a borda de seleção do botão */
+      background-color: #9462e4;
+      /* Definir a cor de fundo do botão */
+      color: rgb(255, 255, 255);
+      /* Definir a cor do texto do botão */
+      cursor: pointer;
+      /* Definir o cursor como um ponteiro ao passar o mouse sobre o botão */
+      padding: 15px;
+      /* Definir o espaçamento interno do botão */
+      border-radius: 10px;
+      /* Definir a borda arredondada do botão */
+      font-family: Star Wars, fantasy;
+      font-size: 16px;
+      /* Definir o tamanho da fonte do texto do botão */
+    }
+
+    #myBtn:hover {
+      background-color: black;
+      /* Definir a cor de fundo do botão quando o mouse passa sobre ele */
+    }
+
+    /*final*/
+  </style>
+</head>
+
+<body>
+  <div id="header">
+    <h1>Bem-vindo a Valhalla</h1>
+    <div id="menu">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="Atumach.html">Atumach</a></li>
+      <li><a href="https://Oferenda.html/">Oferenda</a></li>
+      <li><a href="Tutoriais.html">Tutoriais</a></li>
+      <li><a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSc9vra-bDqpsi0RuQ946ot91AtGUu-Nx326OHtSlU3Q1HHiyg/viewform">Recrutamento</a>
+      </li>
+      <li><a href="https://drive.google.com/file/d/13735xVGAThQRgV2HcxvRZB9sqKUZvndt/view?usp=sharing">Grimório</a></li>
+      <li><a href="https://chat.whatsapp.com/KWYDZZ5ndQE9BRuJFEe9hD">WhatsApp</a></li>
+      <li><a href="https://discord.gg/jQvdhXPmfx">Discord</a></li>
+    </div>
+  </div>
+  <div id="conteudo">
+    <p>Batalha de Atumach</p>
+    <div id="iframe-container">
+      <iframe
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ3JzXdsmEu_Av3QAvLmQHkcm6l4E6iBmfwCCS2Yj50a6xMOxIhXNImGB0XJmFGHs36_oiyXpAzw_B9/pubhtml?gid=1974911681&single=true"
+        width="1035" height="1576"></iframe>
+    </div>
+
+    <script>
+      // Quando o usuário rolar a página para baixo de 20 pixels, mostrar o botão
+      window.onscroll = function () { scrollFunction() };
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          document.getElementById("myBtn").style.display = "block";
+        } else {
+          document.getElementById("myBtn").style.display = "none";
+        }
+      }
+      // Quando o usuário clicar no botão, fazer a animação de scroll suave
+      function topFunction() {
+        document.body.scrollTop = 0; // Para Safari
+        document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE e Opera
+      }
+    </script>
+
+    <button onclick="topFunction()" id="myBtn" title="Voltar ao topo">Voltar ao topo</button>
+
+    <div class="page-nav">
+      <a href="Atumach.html.html">&lt;</a>
+      <a href="Tutoriais.html">&gt;</a>
+    </div>
+
+    <footer>
+      <p>GodRagnarok™️ - Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>
