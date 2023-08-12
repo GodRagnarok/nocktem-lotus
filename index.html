@@ -4,6 +4,8 @@
 <head>
     <title>Valhalla</title>
     <link rel="icon" href="https://cdn.discordapp.com/attachments/1046111249785684032/1097966553007398912/logo.png">
+    <!-- Inclua o link para o Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style type="text/css">
         body {
             margin: 0;
@@ -254,6 +256,28 @@
         }
 
         /*final*/
+        /* Posicionamento do botão de login */
+    .login-button {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 9999;
+        padding: 10px 20px;
+        background-color: #7a92c0;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Estilo do ícone */
+    .login-button i {
+        width: 16px; /* Defina o tamanho desejado em pixels */
+        height: 16px; /* Defina o tamanho desejado em pixels */
+        margin-right: 5px;
+    }
     </style>
 </head>
 <header>
@@ -283,21 +307,91 @@
                     src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ3JzXdsmEu_Av3QAvLmQHkcm6l4E6iBmfwCCS2Yj50a6xMOxIhXNImGB0XJmFGHs36_oiyXpAzw_B9/pubhtml?gid=0&single=true"
                     width="1290" height="1750"></iframe>
             </div>
-                    <!-- Container para as imagens -->
-                    <div id="imagens-container">
-                        <!-- Primeira imagem -->
-                        <div class="imagem">
-                            <h3>Requisitos para participar da Guilda:</h3>
-                            <img src="https://cdn.discordapp.com/attachments/1010289282461728789/1096154916717858946/IMG-20230325-WA0027.jpg"
-                                alt="Título da imagem 1" width="400">
-                        </div>
-                        <!-- Segunda imagem -->
-                        <div class="imagem">
-                            <h3>Requisitos para participar da Guilda:</h3>
-                            <img src="https://cdn.discordapp.com/attachments/1010289282461728789/1096154916935970896/IMG-20230325-WA0028.jpg"
-                                alt="Título da imagem 2" width="400">
-                        </div>
-                    </div>
+
+
+            <!-- teste de botão de login-->
+        <!-- Botão de Login com Discord -->
+        <button id="login-button" class="login-button">
+            <img src="https://media.discordapp.net/attachments/1010289282461728789/1139975997844881418/Black_Discord.png" alt="Ícone do Login" width="40" height="30">
+        </button>
+            <!-- Exibir informações do usuário após o login -->
+            <div id="user-info" style="display: none;">
+                <h2>Informações do Usuário:</h2>
+                <p id="username"></p>
+                <p id="discriminator"></p>
+            </div>
+            
+            <script>
+                const CLIENT_ID = '953936583776690179';
+                const REDIRECT_URI = 'https://godragnarok.github.io/Valhalla/';
+
+                const loginButton = document.querySelector('#login-button');
+                const userInfoContainer = document.getElementById('user-info');
+                const usernameElement = document.getElementById('username');
+                const discriminatorElement = document.getElementById('discriminator');
+
+                // Função para atualizar os botões de login
+                function updateButtons() {
+                    const accessToken = window.location.hash.split('=')[1];
+
+                    if (accessToken && window.location.hash.includes('access_token')) {
+                        loginButton.style.display = 'none';
+                        userInfoContainer.style.display = 'block';
+
+                        fetch('https://discord.com/api/v10/users/@me', {
+                            headers: {
+                                'Authorization': `Bearer ${accessToken}`
+                            }
+                        })
+                            .then(response => {
+                                if (response.ok) {
+                                    return response.json();
+                                } else {
+                                    throw new Error('Falha na autenticação');
+                                }
+                            })
+                            .then(data => {
+                                usernameElement.textContent = `Username: ${data.username}`;
+                                discriminatorElement.textContent = `Discriminator: ${data.discriminator}`;
+                            })
+                            .catch(error => {
+                                console.error(error);
+                                // Limpar a hash da URL em caso de erro
+                                window.location.hash = '';
+                            });
+                    } else {
+                        loginButton.style.display = 'block';
+                        userInfoContainer.style.display = 'none';
+                    }
+                }
+
+                loginButton.addEventListener('click', () => {
+                    // Limpar a hash da URL antes de redirecionar para o login
+                    window.location.hash = '';
+                    window.location.href = `https://discord.com/api/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=token&scope=identify`;
+                });
+
+                // Atualize os botões assim que a página carregar
+                window.addEventListener('load', updateButtons);
+
+                // Atualize os botões sempre que houver alterações na URL
+                window.addEventListener('hashchange', updateButtons);
+            </script>
+            <!-- Container para as imagens -->
+            <div id="imagens-container">
+                <!-- Primeira imagem -->
+                <div class="imagem">
+                    <h3>Requisitos para participar da Guilda:</h3>
+                    <img src="https://cdn.discordapp.com/attachments/1010289282461728789/1096154916717858946/IMG-20230325-WA0027.jpg"
+                        alt="Título da imagem 1" width="400">
+                </div>
+                <!-- Segunda imagem -->
+                <div class="imagem">
+                    <h3>Requisitos para participar da Guilda:</h3>
+                    <img src="https://cdn.discordapp.com/attachments/1010289282461728789/1096154916935970896/IMG-20230325-WA0028.jpg"
+                        alt="Título da imagem 2" width="400">
+                </div>
+            </div>
 
             <script>
                 // Quando o usuário rolar a página para baixo de 20 pixels, mostrar o botão
