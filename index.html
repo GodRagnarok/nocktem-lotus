@@ -310,16 +310,21 @@
 
 
             <!-- teste de botão de login-->
-        <!-- Botão de Login com Discord -->
-        <button id="login-button" class="login-button">
-            <img src="https://media.discordapp.net/attachments/1010289282461728789/1139975997844881418/Black_Discord.png" alt="Ícone do Login" width="40" height="30">
+         <!-- Botão de Login com Discord -->
+    <button id="login-button" class="login-button">
+        <img src="https://media.discordapp.net/attachments/1010289282461728789/1139975997844881418/Black_Discord.png" alt="Ícone do Login" width="40" height="30">
+    </button>
+
+    <!-- Exibir informações do usuário após o login -->
+    <div id="user-info" style="display: none;">
+        <h2>Informações do Usuário:</h2>
+        <p id="username"></p>
+        <p id="discriminator"></p>
+        <!-- Adicione o botão de desconexão -->
+        <button id="logout-button" class="login-button">
+            <i class="fas fa-sign-out-alt"></i> Desconectar
         </button>
-            <!-- Exibir informações do usuário após o login -->
-            <div id="user-info" style="display: none;">
-                <h2>Informações do Usuário:</h2>
-                <p id="username"></p>
-                <p id="discriminator"></p>
-            </div>
+    </div>
             
             <script>
                 const CLIENT_ID = '953936583776690179';
@@ -373,6 +378,17 @@
 
                 // Atualize os botões assim que a página carregar
                 window.addEventListener('load', updateButtons);
+                // Função para fazer logout
+        function logout() {
+            window.location.hash = ''; // Limpar o access token da URL
+            loginButton.style.display = 'block'; // Mostrar botão de login
+            userInfoContainer.style.display = 'none'; // Esconder informações do usuário
+        }
+
+        // Adicionar evento ao botão de desconexão
+        const logoutButton = document.getElementById('logout-button');
+        logoutButton.addEventListener('click', logout);
+    </script>
 
                 // Atualize os botões sempre que houver alterações na URL
                 window.addEventListener('hashchange', updateButtons);
