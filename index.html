@@ -2,258 +2,203 @@
 <html>
 
 <head>
-    <title>Nocktem</title>
-    <link rel="icon" href="https://cdn.discordapp.com/attachments/1211843461100085258/1211848548648484904/IMG-20240226-WA0155.jpg?ex=65efb0e9&is=65dd3be9&hm=b1e978f9f8ea83836d2c93710d70360f902ff313d4b3d1856659c36ca599620a&">
-    <style type="text/css">
-        body {
-            margin: 0;
-            padding: 0;
-        }
+  <title>Nocktem</title>
+  <link rel="icon" href="https://cdn.discordapp.com/attachments/1211843461100085258/1211848548648484904/IMG-20240226-WA0155.jpg?ex=65efb0e9&is=65dd3be9&hm=b1e978f9f8ea83836d2c93710d70360f902ff313d4b3d1856659c36ca599620a&">
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+    }
 
-        #header {
-            background-color: #333;
-            color: #fff;
-            height: 80px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
+    #header {
+      background-color: #333;
+      color: #fff;
+      height: 80px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
 
-        #menu {
-            background-color: #ccc;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: row;
-            position: fixed;
-            top: 80px;
-            left: 0;
-            right: 0;
-            z-index: 9999;
-        }
+    #menu {
+      background-color: #ccc;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      position: fixed;
+      top: 80px;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+    }
 
-        #menu a {
-            color: #333;
-            margin: 0 20px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
-        }
+    #menu a {
+      color: #333;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
 
-        #conteudo {
-            margin-top: 120px;
-            padding: 20px;
-        }
+    #conteudo {
+      margin-top: 120px;
+      padding: 20px;
+    }
 
-        h1 {
-            margin: 0;
-            padding: 20px;
-            font-size: 36px;
-            text-align: center;
-        }
+    h1 {
+      margin: 0;
+      padding: 20px;
+      font-size: 36px;
+      text-align: center;
+    }
 
-        /* alteração da cor do nome "Bem-vindo a Valhalla" */
-        #header h1 {
-            color: rgb(0, 0, 0);
-        }
+    /* alteração da cor do nome "Bem-vindo a Valhalla" */
+    #header h1 {
+      color: rgb(0, 0, 0);
+    }
 
-        /*alinhamento da planilha*/
-        #iframe-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-        }
+    /*alinhamento da planilha*/
+    #iframe-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
 
-        iframe {
-            margin: 0 auto;
-        }
+    iframe {
+      margin: 0 auto;
+    }
 
-        /*final alinhamento da planilha  */
-        /*fonte do nome Ranking*/
-        #conteudo p {
-            font-family: Star Wars, Fantasy;
-            font-size: 28px;
-            color: #fbfbfb;
-            text-align: center;
-            margin-bottom: 30px;
-        }
+    /*final alinhamento da planilha  */
+    /*fonte do nome Ranking*/
+    #conteudo p {
+      font-family: Star Wars, Fantasy;
+      font-size: 28px;
+      color: #ffffff;
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-        /*final fonte ranking*/
-        /*personalizar rodape*/
-        footer {
-            position: flex;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            text-align: center;
-            font-size: 14px;
-            padding: 10px;
-        }
+    /*final fonte ranking*/
+    /*personalizar rodape*/
+    footer {
+      position: flex;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 14px;
+      padding: 10px;
+    }
 
-        /*final rodape*/
-        /*setas*/
-        .page-nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    /*final rodape*/
 
-        .page-nav a {
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            text-align: center;
-            font-size: 35px;
-            line-height: 30px;
-            margin: 0 200px;
-            color: #aa8de8;
-        }
+    /*setas*/
+    .page-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        .page-nav a:hover {
-            color: rgb(27, 187, 187);
-        }
+    .page-nav a {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      font-size: 35px;
+      line-height: 30px;
+      margin: 0 200px;
+      color: #aa8de8;
+    }
 
-        /*final setas*/
-        /*plano de fundo do site*/
-        body {
-            background-image: url('https://cdn.discordapp.com/attachments/1211843461100085258/1211845270376288276/Wallpaper.jpg?ex=65efaddb&is=65dd38db&hm=c521de7c3fa5a8cffdbd8798852b711f0b1725e30d2575b9001955b8a4bce74f&');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-        }
+    .page-nav a:hover {
+      color: rgb(27, 187, 187);
+    }
 
-        /*final*/
-        /*plano de fundo menu*/
-        #menu {
-            background-image: url(https://cdn.discordapp.com/attachments/1010289282461728789/1097587584261173278/Wallpaper.jpg);
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-        }
+    /*final*/
+    /*plano de fundo do site*/
+    body {
+      background-image: url('https://cdn.discordapp.com/attachments/1211843461100085258/1211843512451203102/Wallpaper.jpg?ex=65efac38&is=65dd3738&hm=3990913b2b10a1072fbab1e2b0a7940e3de7ac88d1e58164948da0e83ef8b00b&');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
 
-        /*final*/
-        /*plano de fundo titulo*/
-        #header {
-            background-image: url('https://cdn.discordapp.com/attachments/1010289282461728789/1097587584261173278/Wallpaper.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            background-color: #333;
-            color: #fff;
-            height: 80px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
+    /*final*/
+    /*plano de fundo menu*/
+    #menu {
+      background-image: url(https://cdn.discordapp.com/attachments/1010289282461728789/1097587584261173278/Wallpaper.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
 
-        /*final*/
-        /*Logo do site*/
-        #header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-        }
+    /*final*/
+    /*plano de fundo titulo*/
+    #header {
+      background-image: url('https://cdn.discordapp.com/attachments/1010289282461728789/1097587584261173278/Wallpaper.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-color: #333;
+      color: #fff;
+      height: 80px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
 
-        #header h1 {
-            margin: 0;
-            display: flex;
-            align-items: center;
-        }
+    /*final*/
+    /*Botão Volta ao topo*/
+    #myBtn {
+      display: none;
+      /* Esconder o botão inicialmente */
+      position: fixed;
+      /* Fixar o botão na posição desejada */
+      bottom: 20px;
+      /* Distância em pixels do botão em relação ao fundo da página */
+      right: 30px;
+      /* Distância em pixels do botão em relação à borda direita da página */
+      z-index: 99;
+      /* Colocar o botão na frente de outros elementos na página */
+      border: none;
+      /* Remover a borda do botão */
+      outline: none;
+      /* Remover a borda de seleção do botão */
+      background-color: #9462e4;
+      /* Definir a cor de fundo do botão */
+      color: rgb(255, 255, 255);
+      /* Definir a cor do texto do botão */
+      cursor: pointer;
+      /* Definir o cursor como um ponteiro ao passar o mouse sobre o botão */
+      padding: 15px;
+      /* Definir o espaçamento interno do botão */
+      border-radius: 10px;
+      /* Definir a borda arredondada do botão */
+      font-family: Star Wars, fantasy;
+      font-size: 16px;
+      /* Definir o tamanho da fonte do texto do botão */
+    }
 
-        #header img {
-            height: 100px;
-            width: auto;
-            margin-right: 10px;
-        }
+    #myBtn:hover {
+      background-color: black;
+      /* Definir a cor de fundo do botão quando o mouse passa sobre ele */
+    }
 
-        /**/
-        /**/
-        #imagens-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 150px;
-            /* ajuste o valor conforme necessário */
-        }
-
-        .imagem {
-            text-align: center;
-            width: 48%;
-            margin-bottom: 20px;
-            margin-right: 2%;
-            margin-left: 2%;
-            margin-top: 0;
-            margin-bottom: 0;
-            color: #fff;
-        }
-
-        .imagem img {
-            display: block;
-            margin: 0 auto;
-            width: 100%;
-            /* ajuste para a imagem ocupar 100% da largura do contêiner */
-            height: auto;
-            /* para manter a proporção da imagem */
-        }
-
-        /**/
-
-        /*Botão Volta ao topo*/
-        #myBtn {
-            display: none;
-            /* Esconder o botão inicialmente */
-            position: fixed;
-            /* Fixar o botão na posição desejada */
-            bottom: 20px;
-            /* Distância em pixels do botão em relação ao fundo da página */
-            right: 30px;
-            /* Distância em pixels do botão em relação à borda direita da página */
-            z-index: 99;
-            /* Colocar o botão na frente de outros elementos na página */
-            border: none;
-            /* Remover a borda do botão */
-            outline: none;
-            /* Remover a borda de seleção do botão */
-            background-color: #9462e4;
-            /* Definir a cor de fundo do botão */
-            color: rgb(255, 255, 255);
-            /* Definir a cor do texto do botão */
-            cursor: pointer;
-            /* Definir o cursor como um ponteiro ao passar o mouse sobre o botão */
-            padding: 15px;
-            /* Definir o espaçamento interno do botão */
-            border-radius: 10px;
-            /* Definir a borda arredondada do botão */
-            font-family: Star Wars, fantasy;
-            font-size: 16px;
-            /* Definir o tamanho da fonte do texto do botão */
-        }
-
-        #myBtn:hover {
-            background-color: black;
-            /* Definir a cor de fundo do botão quando o mouse passa sobre ele */
-        }
-
-        /*final*/
+    /*final*/
     </style>
 </head>
 <header>
