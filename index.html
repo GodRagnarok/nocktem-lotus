@@ -42,7 +42,6 @@
 
         #menu a {
             color: #fff;
-            /* Changed text color to white */
             margin: 0 20px;
             text-decoration: none;
             font-weight: bold;
@@ -55,9 +54,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            /* Centralizar horizontalmente */
             justify-content: center;
-            /* Centralizar verticalmente */
         }
 
         h1 {
@@ -66,31 +63,25 @@
             font-size: 36px;
             text-align: center;
             color: #fff;
-            /* Changed text color to white */
         }
 
-        /*alteração da cor do nome "Bem-vindo a Nocktem" */
         #header h1 {
             color: #fff;
-            /* Changed text color to white */
         }
 
-        /*alinhamento da planilha*/
         #iframe-container {
             display: flex;
             justify-content: center;
-            /* Centralizar horizontalmente */
             align-items: center;
-            /* Centralizar verticalmente */
             height: 100%;
+            overflow-x: auto; /* Adicionando overflow-x para rolagem horizontal em dispositivos menores */
         }
 
         iframe {
             margin: 0 auto;
+            max-width: 100%; /* Definindo a largura máxima do iframe */
         }
 
-        /*final alinhamento da planilha */
-        /*fonte do nome Ranking*/
         #conteudo p {
             font-family: Star Wars, Fantasy;
             font-size: 28px;
@@ -99,8 +90,6 @@
             margin-bottom: 30px;
         }
 
-        /*final fonte ranking*/
-        /*personalizar rodape*/
         footer {
             position: flex;
             bottom: 0;
@@ -111,9 +100,6 @@
             padding: 10px;
         }
 
-        /*final rodape*/
-
-        /*setas*/
         .page-nav {
             display: flex;
             justify-content: center;
@@ -135,8 +121,6 @@
             color: rgb(27, 187, 187);
         }
 
-        /*final*/
-        /*plano de fundo do site*/
         body {
             background-image: url('https://wallpaperaccess.com/full/1191494.jpg');
             background-repeat: no-repeat;
@@ -144,8 +128,6 @@
             background-position: center;
         }
 
-        /*final*/
-        /*plano de fundo menu*/
         #menu {
             background-image: url('https://static.vecteezy.com/system/resources/previews/002/891/024/original/dark-pink-background-with-spots-vector.jpg');
             background-repeat: no-repeat;
@@ -153,8 +135,6 @@
             background-position: center;
         }
 
-        /*final*/
-        /*plano de fundo titulo*/
         #header {
             background-image: url('https://static.vecteezy.com/system/resources/previews/002/891/024/original/dark-pink-background-with-spots-vector.jpg');
             background-repeat: no-repeat;
@@ -174,44 +154,26 @@
             flex-direction: column;
         }
 
-        /*final*/
-        /*Botão Volta ao topo*/
         #myBtn {
             display: none;
-            /* Esconder o botão inicialmente */
             position: fixed;
-            /* Fixar o botão na posição desejada */
             bottom: 20px;
-            /* Distância em pixels do botão em relação ao fundo da página */
             right: 30px;
-            /* Distância em pixels do botão em relação à borda direita da página */
             z-index: 99;
-            /* Colocar o botão na frente de outros elementos na página */
             border: none;
-            /* Remover a borda do botão */
             outline: none;
-            /* Remover a borda de seleção do botão */
             background-color: #9462e4;
-            /* Definir a cor de fundo do botão */
             color: rgb(255, 255, 255);
-            /* Definir a cor do texto do botão */
             cursor: pointer;
-            /* Definir o cursor como um ponteiro ao passar o mouse sobre o botão */
             padding: 15px;
-            /* Definir o espaçamento interno do botão */
             border-radius: 10px;
-            /* Definir a borda arredondada do botão */
             font-family: Star Wars, fantasy;
             font-size: 16px;
-            /* Definir o tamanho da fonte do texto do botão */
         }
 
         #myBtn:hover {
             background-color: black;
-            /* Definir a cor de fundo do botão quando o mouse passa sobre ele */
         }
-
-        /*final*/
     </style>
 </head>
 
@@ -237,10 +199,9 @@
         <div id="iframe-container">
             <iframe
                 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ3JzXdsmEu_Av3QAvLmQHkcm6l4E6iBmfwCCS2Yj50a6xMOxIhXNImGB0XJmFGHs36_oiyXpAzw_B9/pubhtml?gid=0&single=true"
-                width="1290" height="1750"></iframe>
+                width="100%" height="100%"></iframe>
         </div>
         <script>
-            // Quando o usuário rolar a página para baixo de 20 pixels, mostrar o botão
             window.onscroll = function () {
                 scrollFunction()
             };
@@ -252,10 +213,10 @@
                     document.getElementById("myBtn").style.display = "none";
                 }
             }
-            // Quando o usuário clicar no botão, fazer a animação de scroll suave
+
             function topFunction() {
-                document.body.scrollTop = 0; // Para Safari
-                document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE e Opera
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
             }
         </script>
 
